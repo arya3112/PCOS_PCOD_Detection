@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PCOS/PCOD Detection System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .container {
+            max-width: 800px;
+            margin-top: 2rem;
+        }
+        .card {
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .form-label {
+            font-weight: 500;
+        }
+        .btn-primary {
+            background-color: #6c63ff;
+            border-color: #6c63ff;
+        }
+        .btn-primary:hover {
+            background-color: #5a52d5;
+            border-color: #5a52d5;
+        }
+        #result {
+            display: none;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card p-4">
+            <h1 class="text-center mb-4">PCOS/PCOD Detection System</h1>
+            <form id="predictionForm">
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="age" class="form-label">Age</label>
+                        <input type="number" class="form-control" id="age" name="age" required min="12" max="60">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="bmi" class="form-label">BMI</label>
+                        <input type="number" class="form-control" id="bmi" name="bmi" required step="0.1" min="15" max="50">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="cycle_regularity" class="form-label">Cycle Regularity (1-5)</label>
+                        <select class="form-select" id="cycle_regularity" name="cycle_regularity" required>
+                            <option value="1">Very Irregular</option>
+                            <option value="2">Irregular</option>
+                            <option value="3">Moderate</option>
+                            <option value="4">Regular</option>
+                            <option value="5">Very Regular</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="weight_gain" class="form-label">Weight Gain (1-5)</label>
+                        <select class="form-select" id="weight_gain" name="weight_gain" required>
+                            <option value="1">None</option>
+                            <option value="2">Slight</option>
+                            <option value="3">Moderate</option>
+                            <option value="4">Significant</option>
+                            <option value="5">Severe</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="hair_growth" class="form-label">Hair Growth (1-5)</label>
+                        <select class="form-select" id="hair_growth" name="hair_growth" required>
+                            <option value="1">None</option>
+                            <option value="2">Slight</option>
+                            <option value="3">Moderate</option>
+                            <option value="4">Significant</option>
+                            <option value="5">Severe</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="skin_darkening" class="form-label">Skin Darkening (1-5)</label>
+                        <select class="form-select" id="skin_darkening" name="skin_darkening" required>
+                            <option value="1">None</option>
+                            <option value="2">Slight</option>
+                            <option value="3">Moderate</option>
+                            <option value="4">Significant</option>
+                            <option value="5">Severe</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="hair_loss" class="form-label">Hair Loss (1-5)</label>
+                        <select class="form-select" id="hair_loss" name="hair_loss" required>
+                            <option value="1">None</option>
+                            <option value="2">Slight</option>
+                            <option value="3">Moderate</option>
+                            <option value="4">Significant</option>
+                            <option value="5">Severe</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="pimples" class="form-label">Pimples (1-5)</label>
+                        <select class="form-select" id="pimples" name="pimples" required>
+                            <option value="1">None</option>
+                            <option value="2">Slight</option>
+                            <option value="3">Moderate</option>
+                            <option value="4">Significant</option>
+                            <option value="5">Severe</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="fast_food" class="form-label">Fast Food Consumption (1-5)</label>
+                        <select class="form-select" id="fast_food" name="fast_food" required>
+                            <option value="1">Never</option>
+                            <option value="2">Rarely</option>
+                            <option value="3">Sometimes</option>
+                            <option value="4">Often</option>
+                            <option value="5">Very Often</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="exercise" class="form-label">Exercise Frequency (1-5)</label>
+                        <select class="form-select" id="exercise" name="exercise" required>
+                            <option value="1">Never</option>
+                            <option value="2">Rarely</option>
+                            <option value="3">Sometimes</option>
+                            <option value="4">Often</option>
+                            <option value="5">Very Often</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary btn-lg">Predict</button>
+                </div>
+            </form>
+
+            <div id="result" class="card mt-4 p-4">
+                <h3 class="text-center mb-3">Prediction Result</h3>
+                <div class="text-center">
+                    <h4 id="predictionText"></h4>
+                    <p id="probabilityText" class="mt-2"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#predictionForm').on('submit', function(e) {
+                e.preventDefault();
+                
+                $.ajax({
+                    url: '/predict',
+                    method: 'POST',
+                    data: $(this).serialize(),
+                    success: function(response) {
+                        $('#result').show();
+                        $('#predictionText').text('Risk Level: ' + response.prediction);
+                        $('#probabilityText').text('Probability: ' + response.probability + '%');
+                    },
+                    error: function(xhr) {
+                        alert('Error: ' + xhr.responseJSON.error);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html> 

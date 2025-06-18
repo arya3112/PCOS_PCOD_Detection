@@ -1,0 +1,6 @@
+credentials:
+  usernames:
+    demo:
+      email: demo@example.com
+      name: Demo User
+      password: $2b$12$EixZaYVK1fsbw1ZfbX3OXePaWxn96p36WQoeG6Lruj3vjPGga31lW # demo123 

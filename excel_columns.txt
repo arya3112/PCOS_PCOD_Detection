@@ -1,0 +1,54 @@
+COLUMNS:
+Sl. No
+Patient File No.
+PCOS (Y/N)
+ Age (yrs)
+Weight (Kg)
+Height(Cm) 
+BMI
+Blood Group
+Pulse rate(bpm) 
+RR (breaths/min)
+Hb(g/dl)
+Cycle(R/I)
+Cycle length(days)
+Marraige Status (Yrs)
+Pregnant(Y/N)
+No. of aborptions
+  I   beta-HCG(mIU/mL)
+II    beta-HCG(mIU/mL)
+FSH(mIU/mL)
+LH(mIU/mL)
+FSH/LH
+Hip(inch)
+Waist(inch)
+Waist:Hip Ratio
+TSH (mIU/L)
+AMH(ng/mL)
+PRL(ng/mL)
+Vit D3 (ng/mL)
+PRG(ng/mL)
+RBS(mg/dl)
+Weight gain(Y/N)
+hair growth(Y/N)
+Skin darkening (Y/N)
+Hair loss(Y/N)
+Pimples(Y/N)
+Fast food (Y/N)
+Reg.Exercise(Y/N)
+BP _Systolic (mmHg)
+BP _Diastolic (mmHg)
+Follicle No. (L)
+Follicle No. (R)
+Avg. F size (L) (mm)
+Avg. F size (R) (mm)
+Endometrium (mm)
+Unnamed: 44
+
+SAMPLE ROWS:
+   Sl. No  Patient File No.  PCOS (Y/N)   Age (yrs)  Weight (Kg)  Height(Cm)         BMI  Blood Group  Pulse rate(bpm)   RR (breaths/min)  Hb(g/dl)  Cycle(R/I)  Cycle length(days)  Marraige Status (Yrs)  Pregnant(Y/N)  No. of aborptions    I   beta-HCG(mIU/mL) II    beta-HCG(mIU/mL)  FSH(mIU/mL)  LH(mIU/mL)    FSH/LH  Hip(inch)  Waist(inch)  Waist:Hip Ratio  TSH (mIU/L) AMH(ng/mL)  PRL(ng/mL)  Vit D3 (ng/mL)  PRG(ng/mL)  RBS(mg/dl)  Weight gain(Y/N)  hair growth(Y/N)  Skin darkening (Y/N)  Hair loss(Y/N)  Pimples(Y/N)  Fast food (Y/N)  Reg.Exercise(Y/N)  BP _Systolic (mmHg)  BP _Diastolic (mmHg)  Follicle No. (L)  Follicle No. (R)  Avg. F size (L) (mm)  Avg. F size (R) (mm)  Endometrium (mm) Unnamed: 44
+0       1                 1           0          28         44.6        152.0  19.300000           15                78                22     10.48           2                   5                    7.0              0                  0                    1.99                   1.99         7.95        3.68  2.160326         36           30         0.833333         0.68       2.07       45.16            17.1        0.57        92.0                 0                 0                     0               0             0              1.0                  0                  110                    80                 3                 3                  18.0                  18.0               8.5         NaN
+1       2                 2           0          36         65.0        161.5  24.921163           15                74                20     11.70           2                   5                   11.0              1                  0                   60.80                   1.99         6.73        1.09  6.174312         38           32         0.842105         3.16       1.53       20.09            61.3        0.97        92.0                 0                 0                     0               0             0              0.0                  0                  120                    70                 3                 5                  15.0                  14.0               3.7         NaN
+2       3                 3           1          33         68.8        165.0  25.270891           11                72                18     11.80           2                   5                   10.0              1                  0                  494.08                 494.08         5.54        0.88  6.295455         40           36         0.900000         2.54       6.63       10.52            49.7        0.36        84.0                 0                 0                     0               1             1              1.0                  0                  120                    80                13                15                  18.0                  20.0              10.0         NaN
+3       4                 4           0          37         65.0        148.0  29.674945           13                72                20     12.00           2                   5                    4.0              0                  0                    1.99                   1.99         8.06        2.36  3.415254         42           36         0.857143        16.41       1.22       36.90            33.4        0.36        76.0                 0                 0                     0               0             0              0.0                  0                  120                    70                 2                 2                  15.0                  14.0               7.5         NaN
+4       5                 5           0          25         52.0        161.0  20.060954           11                72                18     10.00           2                   5                    1.0              1                  0                  801.45                 801.45         3.98        0.90  4.422222         37           30         0.810811         3.57       2.26       30.09            43.8        0.38        84.0                 0                 0                     0               1             0              0.0                  0                  120                    80                 3                 4                  16.0                  14.0               7.0         NaN
