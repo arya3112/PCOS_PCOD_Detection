@@ -1,94 +1,43 @@
 # PCOS/PCOD Detection System
 
-This is a machine learning-based system for detecting the risk of Polycystic Ovary Syndrome (PCOS) and Polycystic Ovarian Disease (PCOD) based on various medical and lifestyle parameters.
+A machine learning-based web application for predicting the risk of Polycystic Ovary Syndrome (PCOS) or Polycystic Ovarian Disease (PCOD).
 
 ## Features
 
-- Web-based user interface for easy input of symptoms and parameters
-- Machine learning model trained on synthetic data
-- Real-time risk assessment
-- Modern and responsive design
-- Easy to use and understand
+- **Risk Prediction**: Input symptoms and lifestyle factors to get PCOS risk assessment
+- **Real-time Monitoring**: Track changes in risk factors over time
+- **Dataset Analysis**: Explore the underlying PCOS dataset
+- **Medical Suggestions**: Get personalized recommendations based on your data
+- **Interactive Visualizations**: Charts and graphs for better understanding
 
-## Prerequisites
+## Technology Stack
 
-- Python 3.8 or higher
-- pip (Python package installer)
+- **Frontend**: Streamlit
+- **Backend**: Python Flask (alternative)
+- **Machine Learning**: Scikit-learn
+- **Data Processing**: Pandas, NumPy
+- **Visualization**: Plotly
 
 ## Installation
 
-1. Clone this repository or download the files
-2. Create a virtual environment (recommended):
-   ```bash
-   python -m venv venv
-   source venv/bin/activate  # On Windows: venv\Scripts\activate
-   ```
-3. Install the required packages:
-   ```bash
-   pip install -r requirements.txt
-   ```
+1. Clone the repository
+2. Install dependencies: `pip install -r requirements.txt`
+3. Run the Streamlit app: `streamlit run app_streamlit.py`
 
 ## Usage
 
-1. First, train the model:
-   ```bash
-   python train_model.py
-   ```
+1. Navigate to the Prediction tab
+2. Enter your symptoms and lifestyle information
+3. Submit to get your risk assessment
+4. Explore other tabs for additional insights
 
-2. Start the web application:
-   ```bash
-   python app.py
-   ```
+## Important Note
 
-3. Open your web browser and navigate to:
-   ```
-   http://localhost:5000
-   ```
+This application is for educational and screening purposes only. Always consult healthcare professionals for proper diagnosis and treatment.
 
-4. Fill in the form with the required information:
-   - Age
-   - BMI (Body Mass Index)
-   - Cycle Regularity
-   - Weight Gain
-   - Hair Growth
-   - Skin Darkening
-   - Hair Loss
-   - Pimples
-   - Fast Food Consumption
-   - Exercise Frequency
+## Deployment
 
-5. Click the "Predict" button to get the risk assessment
+The app is deployed on Streamlit Cloud and can be accessed at the provided URL.
 
-## Important Notes
-
-- This system is for educational and screening purposes only
-- The predictions are based on a machine learning model trained on synthetic data
-- Always consult with healthcare professionals for proper diagnosis and treatment
-- The system should not be used as a replacement for professional medical advice
-
-## Model Details
-
-The system uses a Random Forest Classifier trained on synthetic data. The model takes into account various factors that are commonly associated with PCOS/PCOD:
-
-- Age
-- BMI
-- Menstrual cycle regularity
-- Weight gain
-- Hair growth
-- Skin darkening
-- Hair loss
-- Acne/pimples
-- Dietary habits
-- Exercise frequency
-
-## Contributing
-
-Feel free to contribute to this project by:
-1. Forking the repository
-2. Creating a new branch
-3. Making your changes
-4. Submitting a pull request
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details. 
+---
+*Updated for Python 3.13 compatibility* 
