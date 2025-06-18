@@ -8,6 +8,10 @@ import json
 from datetime import datetime
 import time
 import os
+import warnings
+
+# Suppress scikit-learn version warnings
+warnings.filterwarnings('ignore', category=UserWarning, module='sklearn')
 
 # Initialize session state for user data and real-time monitoring
 if 'user_data' not in st.session_state:
@@ -21,11 +25,15 @@ if 'monitoring_data' not in st.session_state:
 if 'dataset' not in st.session_state:
     st.session_state.dataset = None
 
-# Load model, scaler, and feature names
-model = joblib.load('pcos_model.joblib')
-scaler = joblib.load('scaler.joblib')
-with open('feature_names.json', 'r') as f:
-    FEATURE_NAMES = json.load(f)
+# Load model, scaler, and feature names with error handling
+try:
+    model = joblib.load('pcos_model.joblib')
+    scaler = joblib.load('scaler.joblib')
+    with open('feature_names.json', 'r') as f:
+        FEATURE_NAMES = json.load(f)
+except Exception as e:
+    st.error(f"Error loading model files: {str(e)}")
+    st.stop()
 
 # Function to load dataset
 def load_dataset():
@@ -164,10 +172,15 @@ with tab1:
         features_scaled = scaler.transform(features)
         features_scaled_df = pd.DataFrame(features_scaled, columns=FEATURE_NAMES)
         
-        # Make prediction
-        prediction = model.predict_proba(features_scaled_df)[0]
-        probability = prediction[1] * 100
-        risk = "High Risk" if probability > 50 else "Low Risk"
+        # Make prediction with error handling
+        try:
+            prediction = model.predict_proba(features_scaled_df)[0]
+            probability = prediction[1] * 100
+            risk = "High Risk" if probability > 50 else "Low Risk"
+        except Exception as e:
+            st.error(f"Error making prediction: {str(e)}")
+            st.info("Please try again or contact support if the issue persists.")
+            st.stop()
 
         # Save prediction to history
         prediction_data = {
