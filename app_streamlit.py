@@ -13,6 +13,9 @@ import warnings
 # Suppress scikit-learn version warnings
 warnings.filterwarnings('ignore', category=UserWarning, module='sklearn')
 
+# Force redeployment with updated model files
+# Model retrained with scikit-learn 1.7.0 for compatibility
+
 # Initialize session state for user data and real-time monitoring
 if 'user_data' not in st.session_state:
     st.session_state.user_data = []
